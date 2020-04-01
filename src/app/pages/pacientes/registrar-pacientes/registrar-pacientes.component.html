@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-lg-6 offset-md-3">
+      <nb-card accent="info">
+        <nb-card-header>Nuevo Paciente</nb-card-header>
+        <nb-card-body>
+          <input type="text" nbInput fullWidth shape="rectangle" placeholder="Nombre" [ngModel]="paciente.nombre">
+          <input type="text" nbInput fullWidth shape="rectangle" placeholder="Apellido" [ngModel]="paciente.apellido">
+          <div class="full-name-inputs">
+            <input type="number" fullWidth nbInput shape="rectangle" placeholder="Número de Documento">
+            <input nbInput fullWidth placeholder="Fecha de Nacimiento" [nbDatepicker]="nacimiento">
+            <nb-datepicker #nacimiento></nb-datepicker>
+          </div>
+          <input type="text" nbInput fullWidth shape="rectangle" placeholder="Número de Celular">
+          <input type="email" nbInput fullWidth shape="rectangle" placeholder="Correo Electrónico">
+          <!-- <nb-select placeholder="Especialidad" fullWidth>
+            <nb-option value="1">Clínica Médica</nb-option>
+            <nb-option value="2">Option 2</nb-option>
+          </nb-select> -->
+        </nb-card-body>
+        <nb-card-footer class="buttons-row">
+          <!-- backButton-->
+          <button nbButton status="danger" (click) ="backClicked()" >
+            Cancelar
+          </button>         
+          <button nbButton class="right" status="success">
+            Guardar
+          </button>         
+        </nb-card-footer>
+      </nb-card>
+    </div>
+  </div>
+  

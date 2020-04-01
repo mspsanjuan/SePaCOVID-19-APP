@@ -1,0 +1,12 @@
+<div class="col-md-12 col-lg-6 col-xxxl-6 offset-md-3">
+  <nb-card class="list-card" size="large" accent="info">
+    <nb-card-header>Profesionales Registrados</nb-card-header>
+    <nb-list>
+      <nb-list-item *ngFor="let user of users" [routerLink]="['/pages/profesionales/registrar', user.name.trim()]">
+        <nb-user [name]="user.name" [title]="user.title">
+        </nb-user>
+      </nb-list-item>
+    </nb-list>
+    <nb-card-footer>Cantidad de profesionales registrados: {{users.length}}</nb-card-footer>
+  </nb-card>
+</div>
