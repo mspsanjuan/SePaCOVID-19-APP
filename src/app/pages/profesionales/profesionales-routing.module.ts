@@ -21,18 +21,8 @@ const routes: Routes = [
       {
         path: 'listar',
         component: ListarComponent,
-      },
-    //   {
-    //     path: 'buttons',
-    //     component: ButtonsComponent,
-    //   },
-    //   {
-    //     path: 'datepicker',
-    //     component: DatepickerComponent,
-    //   },
-    ],
-  },
-];
+      }],
+  }];
 
 @NgModule({
   imports: [
@@ -49,4 +39,4 @@ export const routedComponents = [
     ProfesionalesComponent,
     ListarComponent,
     RegistrarComponent,
-  ];
+];

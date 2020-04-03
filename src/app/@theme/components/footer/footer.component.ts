@@ -14,7 +14,7 @@ import { Component } from '@angular/core';
   //     <a href="#" target="_blank" class="ion ion-social-linkedin"></a>
   //   </div>
   // `,
-  template: ``
+  template: ``,
 })
 export class FooterComponent {
 }

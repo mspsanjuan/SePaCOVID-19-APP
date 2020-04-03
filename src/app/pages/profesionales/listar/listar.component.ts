@@ -13,8 +13,7 @@ export class ListarComponent{
     { name: 'Bob Kelso', title: 'Doctor of Medicine' },
     { name: 'Janitor', title: 'Janitor' },
     { name: 'Perry Cox', title: 'Doctor of Medicine' },
-    { name: 'Ben Sullivan', title: 'Carpenter and photographer' },
-  ];
+    { name: 'Ben Sullivan', title: 'Carpenter and photographer' }];
 
 
   usuarioSelect(nombre: any){

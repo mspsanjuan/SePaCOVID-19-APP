@@ -42,6 +42,3 @@ export class RegistrarComponent implements OnInit {
   }
 
 }
-
-
-

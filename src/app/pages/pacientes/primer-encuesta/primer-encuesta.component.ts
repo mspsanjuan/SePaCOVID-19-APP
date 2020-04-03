@@ -5,7 +5,8 @@ import {  NbComponentStatus,
   NbGlobalPosition,
   NbToastrService,
   NbToastrConfig,
-  NbIconConfig} from '@nebular/theme';
+  NbIconConfig,
+} from '@nebular/theme';
 
 @Component({
   selector: 'ngx-primer-encuesta',
@@ -80,8 +81,7 @@ export class PrimerEncuestaComponent implements OnInit {
     {
       "value": "cancer",
       "label": "Neoplasia Maligna (Cáncer)",
-    }
-  ];
+    }];
 
   arregloListadoActualmente = [
     {
@@ -111,8 +111,7 @@ export class PrimerEncuestaComponent implements OnInit {
     {
       "value": "embarazada",
       "label": "Embarazada",
-    }
-  ];
+    }];
 
 
 

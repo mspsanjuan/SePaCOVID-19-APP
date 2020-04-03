@@ -14,7 +14,7 @@ import {
   NbRouteTabsetModule,  
   NbTabsetModule,
   NbStepperModule,
-  NbSpinnerModule
+  NbSpinnerModule,
 } from '@nebular/theme';
 
 import { ThemeModule } from '../../@theme/theme.module';
@@ -45,12 +45,10 @@ import { PrimerEncuestaComponent } from './primer-encuesta/primer-encuesta.compo
     NbTabsetModule,
     ReactiveFormsModule,
     NbStepperModule,
-    NbSpinnerModule
+    NbSpinnerModule,
   ],
   declarations: [
     ...routedComponents,
     PrimerEncuestaComponent,    
-  ],
-
-})
+  ]})
 export class PacientesModule { }

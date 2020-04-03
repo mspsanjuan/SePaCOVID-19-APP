@@ -9,18 +9,12 @@ import {
   NbRadioModule,
   NbSelectModule,
   NbUserModule,
-  NbListModule
+  NbListModule,
 } from '@nebular/theme';
 
 import { ThemeModule } from '../../@theme/theme.module';
 import { ProfesionalesRoutingModule, routedComponents } from './profesionales-routing.module';
-// import { ProfesionalesComponent } from './profesionales.component';
-// import { RegistrarComponent } from './registrar/registrar.component';
-// import { ListarComponent } from './listar/listar.component';
 import { FormsModule as ngFormsModule } from '@angular/forms';
-// import { FormLayoutsComponent } from './form-layouts/form-layouts.component';
-// import { DatepickerComponent } from './datepicker/datepicker.component';
-// import { ButtonsComponent } from './buttons/buttons.component';
 
 @NgModule({
   imports: [

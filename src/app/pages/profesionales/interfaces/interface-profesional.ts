@@ -6,4 +6,5 @@ export interface IDatosProfesional {
     contacto: String;
     email: String;
     especialidad: String;
-  };
+};
+  

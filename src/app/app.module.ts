@@ -20,7 +20,6 @@ import {
   NbToastrModule,
   NbWindowModule,
   NbStepperModule,
-  
 } from '@nebular/theme';
 import { NbAuthModule, NbPasswordAuthStrategy } from '@nebular/auth';
 
@@ -62,11 +61,8 @@ registerLocaleData(localeEsAR, 'es-Ar');
             // ...
             endpoint: 'register',
           },
-  
-        }),
-      ],
-    }),
-  ],
+        })],
+    })],
   providers: [
     { provide: LOCALE_ID, useValue: 'es-Ar' },
   ],
