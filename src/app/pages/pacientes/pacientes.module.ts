@@ -10,15 +10,17 @@ import {
   NbSelectModule,
   NbUserModule,
   NbListModule,
-  NbDialogModule,
-  NbRouteTabsetModule,
-  NbStepperModule,
+  NbWindowModule,
+  NbRouteTabsetModule,  
   NbTabsetModule,
+  NbStepperModule,
+  NbSpinnerModule
 } from '@nebular/theme';
 
 import { ThemeModule } from '../../@theme/theme.module';
-import { PacientesRoutingModule, routedComponents, entryComponents } from './pacientes-routing.module';
+import { PacientesRoutingModule, routedComponents } from './pacientes-routing.module';
 import { FormsModule as ngFormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PrimerEncuestaComponent } from './primer-encuesta/primer-encuesta.component';
 
 
 
@@ -38,17 +40,17 @@ import { FormsModule as ngFormsModule, ReactiveFormsModule } from '@angular/form
     NbIconModule,
     ngFormsModule,
     NbListModule,
-    NbDialogModule.forChild(),
+    NbWindowModule,
     NbRouteTabsetModule,
-    NbStepperModule,
     NbTabsetModule,
     ReactiveFormsModule,
+    NbStepperModule,
+    NbSpinnerModule
   ],
   declarations: [
-    ...routedComponents,    
+    ...routedComponents,
+    PrimerEncuestaComponent,    
   ],
-  entryComponents: [
-    ...entryComponents,
-  ],
+
 })
 export class PacientesModule { }

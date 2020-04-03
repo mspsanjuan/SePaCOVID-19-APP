@@ -5,7 +5,7 @@
  */
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { CoreModule } from './@core/core.module';
 import { ThemeModule } from './@theme/theme.module';
@@ -19,8 +19,14 @@ import {
   NbSidebarModule,
   NbToastrModule,
   NbWindowModule,
+  NbStepperModule,
+  
 } from '@nebular/theme';
 import { NbAuthModule, NbPasswordAuthStrategy } from '@nebular/auth';
+
+import { registerLocaleData } from '@angular/common';
+import localeEsAR from '@angular/common/locales/es-AR';
+registerLocaleData(localeEsAR, 'es-Ar');
 
 @NgModule({
   declarations: [AppComponent],
@@ -29,6 +35,7 @@ import { NbAuthModule, NbPasswordAuthStrategy } from '@nebular/auth';
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
+    NbStepperModule,    
     NbSidebarModule.forRoot(),
     NbMenuModule.forRoot(),
     NbDatepickerModule.forRoot(),
@@ -59,6 +66,9 @@ import { NbAuthModule, NbPasswordAuthStrategy } from '@nebular/auth';
         }),
       ],
     }),
+  ],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'es-Ar' },
   ],
   bootstrap: [AppComponent],
 })

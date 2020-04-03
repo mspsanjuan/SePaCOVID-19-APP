@@ -29,9 +29,11 @@ const routes: Routes = [{
         .then(m => m.PacientesModule),
     },
     {
-      path: 'primer-encuesta',
-      loadChildren: () => import('./primera-encuesta/primera-encuesta.module')
-        .then(m => m.PrimeraEncuestaModule),
+      path: 'primera-carga-datos',
+      // loadChildren: () => import('./pacientes/primera-carga-datos/primera-carga-datos.component')
+      //   .then(m => m.PrimeraCargaDatosComponent),
+      loadChildren: () => import('./pacientes/pacientes.module')
+        .then(m => m.PacientesModule),
     },
     // {
     //   path: 'ui-features',

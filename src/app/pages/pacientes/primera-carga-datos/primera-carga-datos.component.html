@@ -1,15 +1,432 @@
 <div class="row">
-    <div class="col-md-12 col-lg-6 col-xxxl-3">
-        <nb-card class="form-input-card">
-          <nb-card-header>Return Result From Dialog</nb-card-header>
-          <nb-card-body class="result-from-dialog">
-            <button nbButton (click)="open3()">Enter Name</button>
-            <br>
-            <h3 class="title">Names:</h3>
-            <ul>
-              <li *ngFor="let name of names">{{ name }}</li>
-            </ul>
-          </nb-card-body>
+    <div class="col-md-12">
+        <nb-card accent="info">
+            <nb-card-body>                       
+              <nb-stepper #stepper linear="true">   
+                <!-- PASO 1  -->
+                <nb-step [stepControl]="datosPersonales" label="Datos Personales">
+                  <form #datosPersonales="ngForm"  class="step-container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="text"
+                             placeholder="Nombre"
+                             name="nombre"
+                             required
+                             nbInput                             
+                             fullWidth
+                             ngModel
+                             #nombre="ngModel"
+                             [status]="nombre.invalid ? 'danger' : 'basic'">
+
+                            <ng-container *ngIf="nombre.invalid">
+                                <p class="caption status-danger">
+                                    Debe ingresar el Nombre
+                                </p>
+                                <!-- <p class="caption status-danger" *ngIf="dni.errors?.pattern">
+                                    Debe ingresar números, sin punto
+                                </p> -->
+                            </ng-container>
+
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text"
+                            placeholder="Apellido"                            
+                            name="apellido"
+                            required
+                            nbInput                            
+                            fullWidth
+                            ngModel
+                            #apellido="ngModel"
+                            [status]="apellido.invalid ? 'danger' : 'basic'">
+                            <ng-container *ngIf="apellido.invalid">
+                                <p class="caption status-danger">
+                                    Debe ingresar apellido
+                                </p>
+                                <!-- <p class="caption status-danger" *ngIf="dni.errors?.pattern">
+                                    Debe ingresar números, sin punto
+                                </p> -->
+                            </ng-container>
+                        </div>                                               
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="text"
+                             placeholder="Número de Documento o Pasaporte"
+                             name="dniPasaporte"
+                             required
+                             nbInput                             
+                             fullWidth
+                             ngModel
+                             #dniPasaporte="ngModel"
+                             [status]="dniPasaporte.invalid ? 'danger' : 'basic'">
+                             <ng-container *ngIf="dniPasaporte.invalid">
+                                <p class="caption status-danger">
+                                    Debe ingresar el número de documento o pasaporte
+                                </p>
+                                <!-- <p class="caption status-danger" *ngIf="dni.errors?.pattern">
+                                    Debe ingresar números, sin punto
+                                </p> -->
+                            </ng-container>
+                        </div>
+                        <div class="col-md-6">
+                            <nb-select 
+                            placeholder="Sexo"
+                            name="sexo"
+                            required                            
+                            fullWidth                            
+                            ngModel
+                            #sexo="ngModel"
+                            [status]="sexo.invalid ? 'danger' : 'basic'">
+                                <nb-option value="femenino">Femenino</nb-option>
+                                <nb-option value="masculino">Masculino</nb-option>
+                            </nb-select>  
+                            <ng-container *ngIf="sexo.invalid">
+                                <p class="caption status-danger">
+                                    Debe seleccionar un elemento
+                                </p>
+                                <!-- <p class="caption status-danger" *ngIf="dni.errors?.pattern">
+                                    Debe ingresar números, sin punto
+                                </p> -->
+                            </ng-container>                                               
+                        </div>                                               
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">                                             
+                            <input
+
+                             nbInput 
+                             fullWidth
+                             placeholder="Fecha de Nacimiento" 
+                             [nbDatepicker]="fechaNacimiento"
+                             name="fecha Nacimiento"                              
+                             
+                             [(ngModel)]="cim.investmentDate"  
+                                                        
+                             [status]="cim.investmentDate == '' ? 'danger' : 'basic'">
+                            <nb-datepicker #fechaNacimiento></nb-datepicker>  
+                            <ng-container *ngIf="cim.investmentDate == ''">
+                                <p class="caption status-danger">
+                                    Debe ingresar su fecha de nacimiento
+                                </p>
+                                <!-- <p class="caption status-danger" *ngIf="dni.errors?.pattern">
+                                    Debe ingresar números, sin punto
+                                </p> -->
+                            </ng-container>                      
+                        </div>
+                        <div class="col-md-6">
+                            <nb-select                             
+                             autocomplete="off" 
+                            placeholder="Nacionalidad"
+                            name="nacionalidad"
+                            required                            
+                            fullWidth
+                            ngModel
+                            #nacionalidad="ngModel"
+                            [status]="nacionalidad.invalid ? 'danger' : 'basic'"
+                             >
+                                <nb-option value="1">Nacionalidad 1</nb-option>
+                                <nb-option value="2">Nacionalidad 2</nb-option>
+                            </nb-select>   
+                            <ng-container *ngIf="nacionalidad.invalid">
+                                <p class="caption status-danger">
+                                    Debe seleccionar un elemento
+                                </p>
+                                <!-- <p class="caption status-danger" *ngIf="dni.errors?.pattern">
+                                    Debe ingresar números, sin punto
+                                </p> -->
+                            </ng-container>    
+                        </div>                                               
+                    </div>
+                    <button nbButton nbStepperNext>Siguiente</button>
+                    
+                  </form>
+                </nb-step>
+                <!-- PASO 2 -->
+                <nb-step [stepControl]="contacto" label="Contacto">
+                  <form #contacto="ngForm" class="step-container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input type="email"
+                             placeholder="Correo Electrónico"
+                             name="email"
+                             required
+                             nbInput  
+                             pattern="[^@\s]+@[^@\s]+"                           
+                             fullWidth
+                             ngModel
+                             #email="ngModel"
+                             [status]="email.invalid ? 'danger' : 'basic'">
+                             <ng-container *ngIf="email.invalid">
+                                <p class="caption status-danger">
+                                    Debe ingresar un correo electrónico
+                                </p>
+                                <!-- <p class="caption status-danger" *ngIf="dni.errors?.pattern">
+                                    El texto ingresado no posee el formato de correo electrónico
+                                </p> -->
+                            </ng-container>
+                        </div>
+                                                                   
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="text"
+                             placeholder="Teléfono Móvil"
+                             name="celular"
+                             required
+                             nbInput                             
+                             fullWidth
+                             ngModel
+                             #celular="ngModel"
+                             [status]="celular.invalid ? 'danger' : 'basic'">
+                             <ng-container *ngIf="celular.invalid">
+                                <p class="caption status-danger">
+                                    Debe ingresar el número de documento
+                                </p>
+                                <!-- <p class="caption status-danger" *ngIf="dni.errors?.pattern">
+                                    Debe ingresar números, sin punto
+                                </p> -->
+                            </ng-container>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text"
+                            placeholder="Teléfono Fijo (Opcional)"
+                            name="telefonoFijo"                            
+                            nbInput                            
+                            fullWidth
+                            ngModel
+                            #telefonoFijo="ngModel"
+                            [status]="telefonoFijo.invalid ? 'danger' : 'basic'">  
+                                                                       
+                        </div>                                               
+                    </div>
+                    <br>
+                    <p>Contacto de Emergencia</p>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <input type="text"
+                            placeholder="Nombre del Contacto"
+                            name="nombreContacto"
+                            
+                            nbInput                            
+                            fullWidth
+                            ngModel
+                            #nombreContacto="ngModel"
+                            [status]="nombreContacto.invalid ? 'danger' : 'basic'">
+                                                                             
+                        </div>   
+                        <div class="col-md-5">
+                            <input type="text"
+                             placeholder="Número del Contacto"
+                             name="numeroContacto"
+                             
+                             nbInput                             
+                             fullWidth
+                             ngModel
+                             #numeroContacto="ngModel"
+                             [status]="numeroContacto.invalid ? 'danger' : 'basic'">
+                        </div>
+                        <div class="col-md-2">
+                            <nb-select 
+                            placeholder="Tipo de Teléfono"
+                            name="tipoTelContacto"
+                                                        
+                            fullWidth
+                            ngModel
+                             #tipoTelContacto="ngModel"
+                             [status]="tipoTelContacto.invalid ? 'danger' : 'basic'">
+                                <nb-option value="celular">Celular</nb-option>
+                                <nb-option value="fijo">Fijo</nb-option>
+                            </nb-select>                                                 
+                        </div>                                               
+                    </div>
+                    <button nbButton nbStepperNext>Siguiente</button>
+                  </form>
+                </nb-step>
+                <!-- PASO 3 -->
+                <nb-step [stepControl]="domicilio" label="Domicilio">
+                  <form #domicilio="ngForm" class="step-container">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <input type="text"
+                            placeholder="Calle"
+                            name="dimicilioCalle"
+                            required
+                            nbInput                            
+                            fullWidth                            
+                            ngModel
+                            #domicilioCalle="ngModel"
+                            [status]="domicilioCalle.invalid ? 'danger' : 'basic'">  
+                            <ng-container *ngIf="domicilioCalle.invalid">
+                                <p class="caption status-danger">
+                                    Debe ingresar su domicilio
+                                </p>
+                                <!-- <p class="caption status-danger" *ngIf="dni.errors?.pattern">
+                                    Debe ingresar números, sin punto
+                                </p> -->
+                            </ng-container>                                                
+                        </div>   
+                        <div class="col-md-5">
+                            <input type="number"
+                             placeholder="Número"
+                             name="domicilioNumero"
+                             
+                             nbInput                             
+                             fullWidth
+                             ngModel
+                             #domicilioNumero="ngModel"
+                             [status]="domicilioNumero.invalid ? 'danger' : 'basic'">
+                        </div>
+                        <div class="col-md-2">
+                            <nb-select 
+                            placeholder="Orientación"
+                            name="domicilioOrientacion"
+                            required                            
+                            fullWidth                            
+                            ngModel
+                            #domicilioOrientacion="ngModel"
+                            [status]="domicilioOrientacion.invalid ? 'danger' : 'basic'">
+                                <nb-option value="norte">Norte</nb-option>
+                                <nb-option value="sur">Sur</nb-option>
+                                <nb-option value="este">Este</nb-option>
+                                <nb-option value="oeste">Oeste</nb-option>
+                            </nb-select>
+                            <ng-container *ngIf="domicilioOrientacion.invalid">
+                                <p class="caption status-danger">
+                                    Debe ingresar la orientación de su domicilio
+                                </p>
+                                <!-- <p class="caption status-danger" *ngIf="dni.errors?.pattern">
+                                    Debe ingresar números, sin punto
+                                </p> -->
+                            </ng-container>                                                  
+                        </div>                                               
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <nb-select 
+                            placeholder="País"
+                            name="domicilioPais"
+                            required                            
+                            fullWidth                            
+                            ngModel
+                            #domicilioPais="ngModel"
+                            [status]="domicilioPais.invalid ? 'danger' : 'basic'">
+                                <nb-option value="arg">Argentina</nb-option>
+                            </nb-select> 
+                            <ng-container *ngIf="domicilioPais.invalid">
+                                <p class="caption status-danger">
+                                    Debe seleccionar un elemento
+                                </p>
+                                <!-- <p class="caption status-danger" *ngIf="dni.errors?.pattern">
+                                    Debe ingresar números, sin punto
+                                </p> -->
+                            </ng-container>                                                
+                        </div>   
+                        <div class="col-md-4">
+                            <nb-select 
+                            placeholder="Provincia"
+                            name="domicilioProvincia"
+                            required                            
+                            fullWidth                            
+                            ngModel
+                            #domicilioProvincia="ngModel"
+                            [status]="domicilioProvincia.invalid ? 'danger' : 'basic'">
+                                <nb-option value="sj">San Juan</nb-option>                               
+                            </nb-select>     
+                            <ng-container *ngIf="domicilioProvincia.invalid">
+                                <p class="caption status-danger">
+                                    Debe seleccionar un elemento
+                                </p>
+                                <!-- <p class="caption status-danger" *ngIf="dni.errors?.pattern">
+                                    Debe ingresar números, sin punto
+                                </p> -->
+                            </ng-container> 
+                        </div>
+                        <div class="col-md-4">
+                            <nb-select 
+                            placeholder="Localidad"
+                            name="domicilioLocalidad"
+                            required                            
+                            fullWidth                            
+                            ngModel
+                            #domicilioLocalidad="ngModel"
+                            [status]="domicilioLocalidad.invalid ? 'danger' : 'basic'">
+                                <nb-option value="capital">Capital</nb-option>                               
+                            </nb-select>   
+                            <ng-container *ngIf="domicilioLocalidad.invalid">
+                                <p class="caption status-danger">
+                                    Debe seleccionar un elemento
+                                </p>
+                                <!-- <p class="caption status-danger" *ngIf="dni.errors?.pattern">
+                                    Debe ingresar números, sin punto
+                                </p> -->
+                            </ng-container>                                               
+                        </div>                                               
+                    </div>
+                    <button nbButton nbStepperNext>Siguiente</button>
+                  </form>
+                </nb-step>
+                <!-- PASO 4 -->
+                <nb-step [stepControl]="cuenta" label="Cuenta">
+                    <form #cuenta="ngForm" class="step-container">
+                        <div class="row">
+                            <div class="col-md-6 offset-md-3">
+                                <input type="password"
+                                 placeholder="Ingrese una nueva Contraseña"
+                                 name="contrasenia"
+                                 required
+                                 nbInput                                 
+                                 fullWidth
+                                 ngModel
+                                 #contrasenia="ngModel"
+                                 [status]="contrasenia.invalid ? 'danger' : 'basic'">
+                                 <ng-container *ngIf="contrasenia.invalid">
+                                    <p class="caption status-danger">
+                                        Debe ingresar una nueva Contraseña
+                                    </p>
+                                    <!-- <p class="caption status-danger" *ngIf="dni.errors?.pattern">
+                                        Debe ingresar números, sin punto
+                                    </p> -->
+                                </ng-container> 
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 offset-md-3">
+                                <input type="password"
+                                placeholder="Repita la una nueva Contraseña"
+                                name="repetirContrasenia"
+                                required
+                                nbInput                                
+                                fullWidth
+                                ngModel
+                                #repetirContrasenia="ngModel"
+                                [status]="repetirContrasenia.invalid ? 'danger' : 'basic'">    
+                                <ng-container *ngIf="repetirContrasenia.invalid">
+                                    <p class="caption status-danger">
+                                        Debe repetir su Contraseña
+                                    </p>
+                                    <p class="caption status-danger" *ngIf="repetirContrasenia.value != contrasenia.value">
+                                        Las contraseñas no coinciden
+                                    </p>
+                                </ng-container>                                          
+                            </div>                                               
+                        </div>
+                      <!-- <button nbButton nbStepperNext status="success">Guardar</button> -->
+                        <button nbButton nbStepperNext  status="success" size="large" (click)="toggleLoadingLargeGroupAnimation()" [disabled]="btnGuardar && repetirContrasenia.value != contrasenia.value"
+                                [nbSpinner]="loadingLargeGroup" nbSpinnerStatus="success" nbSpinnerSize="large" nbSpinnerMessage="">
+                            Guardar
+                        </button>
+                    </form>
+                  </nb-step>
+          
+                <nb-step [hidden]="confirmarcionTerminada">
+                  <div class="step-container">
+                    <h3>¡LISTO! Los datos se guardaron correctamente</h3>
+                    <!-- <button nbButton (click)="stepper.reset()">Try again</button> -->
+                  </div>
+                </nb-step>
+              </nb-stepper>
+            </nb-card-body>
         </nb-card>
     </div>
 </div>

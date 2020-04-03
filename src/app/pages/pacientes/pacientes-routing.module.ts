@@ -5,7 +5,7 @@ import { PacientesComponent } from './pacientes.component';
 import { RegistrarPacientesComponent } from './registrar-pacientes/registrar-pacientes.component';
 import { ListarPacientesComponent } from "./listar-pacientes/listar-pacientes.component";
 import { PrimeraCargaDatosComponent } from './primera-carga-datos/primera-carga-datos.component';
-import { FormularioComponent } from './primera-carga-datos/formulario/formulario.component';
+import { PrimerEncuestaComponent } from "./primer-encuesta/primer-encuesta.component";
 
 
 const routes: Routes = [
@@ -29,10 +29,10 @@ const routes: Routes = [
         path: 'primera-carga-datos',
         component: PrimeraCargaDatosComponent,
       },
-    //   {
-    //     path: 'datepicker',
-    //     component: DatepickerComponent,
-    //   },
+      {
+        path: 'primer-encuesta',
+        component: PrimerEncuestaComponent,
+      },
     ],
   },
 ];
@@ -53,9 +53,4 @@ export const routedComponents = [
     ListarPacientesComponent,
     RegistrarPacientesComponent,
     PrimeraCargaDatosComponent,
-    FormularioComponent,
-  ];
-
-  export const entryComponents = [
-    FormularioComponent,
   ];

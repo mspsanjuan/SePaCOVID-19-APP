@@ -40,17 +40,22 @@ export const MENU_ITEMS: NbMenuItem[] = [
         title: 'Pacientes Registrados',
         link: '/pages/pacientes/listar',
       },
-      {
-        title: 'Primer Carga de Datos',
-        link: '/pages/pacientes/primera-carga-datos',
-      },
+      // {
+      //   title: 'Primer Carga de Datos',
+      //   link: '/pages/pacientes/primera-carga-datos',
+      // },
      
     ],
   },
   {
-    title: 'Primera Encuesta Paciente',
+    title: 'Primeros Datos del Paciente',
     icon: 'checkmark-circle-outline',
-
+    link: '/pages/pacientes/primera-carga-datos',
+  },
+  {
+    title: 'Primer encuesta paciente',
+    icon: 'clipboard-outline',
+    link: '/pages/pacientes/primer-encuesta'
   },
   {
     title: 'LOGIN',

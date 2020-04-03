@@ -1,38 +1,16 @@
-@import '~bootstrap/scss/mixins/breakpoints';
-@import '~@nebular/theme/styles/global/breakpoints';
-
-@import '../../../@theme/styles/themes';
-
-@include nb-install-component() {
-  button + button {
-    margin-left: 2rem;
-  }
-
-  @include media-breakpoint-down(xxl) {
-    nb-card-body {
-      display: flex;
-    }
-
+:host ::ng-deep nb-stepper .step-content {
+    text-align: center;
+  
     button {
-      flex: 1;
-      padding: 0.8rem;
+      cursor: pointer;
+    //   margin: 0.5rem;
     }
-  }
-
-  @include media-breakpoint-down(is) {
-    nb-card-body {
-      display: block;
+    .row {
+        margin-bottom: 15px;
     }
+    // .select-button {
+    //     margin: 0!important;
+    // }
 
-    button {
-      + button {
-        margin-left: 0;
-      }
 
-      width: 100%;
-      display: block;
-      margin-bottom: 2rem;
-      padding: 0.75rem;
-    }
-  }
 }
