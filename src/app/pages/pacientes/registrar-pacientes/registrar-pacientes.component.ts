@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from "@angular/router";
-import { IDatosPaciente } from "./../interfaces/interface-paciente";
+import { ActivatedRoute } from '@angular/router';
+import { IDatosPaciente } from './../interfaces/interface-paciente';
 import {Location} from '@angular/common';
 
 @Component({

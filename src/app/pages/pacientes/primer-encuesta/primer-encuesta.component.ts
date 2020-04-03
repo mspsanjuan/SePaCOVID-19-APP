@@ -55,62 +55,62 @@ export class PrimerEncuestaComponent implements OnInit {
 
   arregloListadoAntecedentes = [
     {
-      "value": "asma",
-      "label": "Asma",
+      'value': 'asma',
+      'label': 'Asma',
     },
     {
-      "value": "enfRespiratoria",
-      "label": "Enfermedad Respiratoria",
+      'value': 'enfRespiratoria',
+      'label': 'Enfermedad Respiratoria',
     },
     {
-      "value": "hiperArterial",
-      "label": "Hipertensión Arterial",
+      'value': 'hiperArterial',
+      'label': 'Hipertensión Arterial',
     },
     {
-      "value": "enfCardiovascular",
-      "label": "Enfermedad Cardiovascular",
+      'value': 'enfCardiovascular',
+      'label': 'Enfermedad Cardiovascular',
     },
     {
-      "value": "enfRenal",
-      "label": "Enfermedad Renal",
+      'value': 'enfRenal',
+      'label': 'Enfermedad Renal',
     },
     {
-      "value": "enfEpatica",
-      "label": "Enfermedad Hepática",
+      'value': 'enfEpatica',
+      'label': 'Enfermedad Hepática',
     },
     {
-      "value": "cancer",
-      "label": "Neoplasia Maligna (Cáncer)",
+      'value': 'cancer',
+      'label': 'Neoplasia Maligna (Cáncer)',
     }];
 
   arregloListadoActualmente = [
     {
-      "value": "asma",
-      "label": "Asma",
+      'value': 'asma',
+      'label': 'Asma',
     },
     {
-      "value": "epoc",
-      "label": "EPOC (Enfermedad Pulmonar Obstructiva Crónica)",
+      'value': 'epoc',
+      'label': 'EPOC (Enfermedad Pulmonar Obstructiva Crónica)',
     },
     {
-      "value": "hiperArterial",
-      "label": "Hipertensión Arterial",
+      'value': 'hiperArterial',
+      'label': 'Hipertensión Arterial',
     },
     {
-      "value": "diabmellitus",
-      "label": "Diabetes Mellitus",
+      'value': 'diabmellitus',
+      'label': 'Diabetes Mellitus',
     },
     {
-      "value": "enfRenalCronica",
-      "label": "Enfermedad Renal Crónica",
+      'value': 'enfRenalCronica',
+      'label': 'Enfermedad Renal Crónica',
     },
     {
-      "value": "enfEpaticaCronica",
-      "label": "Enfermedad Hepática Crónica",
+      'value': 'enfEpaticaCronica',
+      'label': 'Enfermedad Hepática Crónica',
     },
     {
-      "value": "embarazada",
-      "label": "Embarazada",
+      'value': 'embarazada',
+      'label': 'Embarazada',
     }];
 
 

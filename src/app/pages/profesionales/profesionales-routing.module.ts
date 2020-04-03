@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { ProfesionalesComponent } from './profesionales.component';
 import { RegistrarComponent } from './registrar/registrar.component';
-import { ListarComponent } from "./listar/listar.component";
+import { ListarComponent } from './listar/listar.component';
 
 const routes: Routes = [
   {
