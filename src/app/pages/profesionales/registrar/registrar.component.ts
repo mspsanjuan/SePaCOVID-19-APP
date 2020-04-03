@@ -23,15 +23,15 @@ export class RegistrarComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private _location: Location,
-  ){}
+  ) {}
 
-  ngOnInit(){
-    this.route.params.subscribe( params => {
-      if( typeof params['id'] !== 'undefined' ){
+  ngOnInit() {
+    this.route.params.subscribe(params => {
+      if ( typeof params['id'] !== 'undefined' ) {
         this.profesional.nombre = params['id'].split(' ')[0];
         this.profesional.apellido = params['id'].split(' ')[1];
       }
-    })
+    });
   }
 
   backClicked() {

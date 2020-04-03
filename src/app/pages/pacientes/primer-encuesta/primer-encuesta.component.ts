@@ -13,7 +13,6 @@ import {  NbComponentStatus,
   styleUrls: ['./primer-encuesta.component.scss'],
 })
 export class PrimerEncuestaComponent implements OnInit {
-  // 
   constructor( private toastrService: NbToastrService ) { }
 
   // checked = false;
@@ -33,7 +32,7 @@ export class PrimerEncuestaComponent implements OnInit {
     this.loadingLargeGroup = false;
     this.btnGuardar = true;
     this.showToast( 'top-right' );
-    setTimeout( () =>{     
+    setTimeout( () => {
       this.btnGuardar = false;
       }, 3000 );
   }

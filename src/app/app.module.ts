@@ -34,7 +34,7 @@ registerLocaleData(localeEsAR, 'es-Ar');
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
-    NbStepperModule,    
+    NbStepperModule,
     NbSidebarModule.forRoot(),
     NbMenuModule.forRoot(),
     NbDatepickerModule.forRoot(),

@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   templateUrl: './listar.component.html',
   styleUrls: ['./listar.component.scss'],
 })
-export class ListarComponent{
+export class ListarComponent {
   users: { name: string, title: string }[] = [
     { name: 'Carla Espinosa', title: 'Nurse' },
     { name: 'Bob Kelso', title: 'Doctor of Medicine' },
@@ -15,8 +15,6 @@ export class ListarComponent{
     { name: 'Ben Sullivan', title: 'Carpenter and photographer' }];
 
 
-  usuarioSelect( nombre: any ){
-    // alert(nombre);
-  }
+  usuarioSelect( nombre: any ) {}
 
 }

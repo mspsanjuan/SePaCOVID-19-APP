@@ -13,23 +13,19 @@ export class PrimeraCargaDatosComponent implements OnInit {
   // repetirContrasenia = "";
 
   cim = { investmentDate: '' };
-  
 
-  toggleLoadingLargeGroupAnimation( ) {
+  toggleLoadingLargeGroupAnimation() {
     this.loadingLargeGroup = true;
     this.btnGuardar = true;
-    setTimeout( () => {
+    setTimeout(() => {
       this.confirmarcionTerminada = false;
       this.loadingLargeGroup = false;
       this.btnGuardar = false;
-      }, 3000 );
+    }, 3000);
   }
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit(): void {
- 
-  }
+  ngOnInit(): void { }
 
-    
 }

@@ -25,12 +25,12 @@ export class RegistrarPacientesComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.route.params.subscribe( params => { 
-      if( typeof params['id'] !== 'undefined' ){
+    this.route.params.subscribe( params => {
+      if ( typeof params['id'] !== 'undefined' ) {
         this.paciente.nombre = params['id'].split(' ')[0];
         this.paciente.apellido = params['id'].split(' ')[1];
       }
-    })
+    });
   }
 
   backClicked() {
