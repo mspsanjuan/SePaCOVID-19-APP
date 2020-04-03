@@ -11,7 +11,7 @@ import {
   NbUserModule,
   NbListModule,
   NbWindowModule,
-  NbRouteTabsetModule,  
+  NbRouteTabsetModule,
   NbTabsetModule,
   NbStepperModule,
   NbSpinnerModule,
@@ -49,6 +49,6 @@ import { PrimerEncuestaComponent } from './primer-encuesta/primer-encuesta.compo
   ],
   declarations: [
     ...routedComponents,
-    PrimerEncuestaComponent,    
+    PrimerEncuestaComponent,
   ]})
 export class PacientesModule { }

@@ -21,8 +21,7 @@ import { AuthComponent } from './auth/auth.component';
   declarations: [
     PagesComponent,
     PrimeraEncuestaComponent,
-    AuthComponent,   
-    
+    AuthComponent, 
   ],
 })
 export class PagesModule {

@@ -6,5 +6,4 @@ export interface IDatosPaciente {
     contacto: String;
     email: String;
     // especialidad: String;
-};
-  
+}

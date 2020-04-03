@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'ngx-primera-carga-datos',
   templateUrl: './primera-carga-datos.component.html',
-  styleUrls: ['./primera-carga-datos.component.scss']
+  styleUrls: ['./primera-carga-datos.component.scss'],
 })
 export class PrimeraCargaDatosComponent implements OnInit {
 
@@ -13,21 +12,20 @@ export class PrimeraCargaDatosComponent implements OnInit {
   confirmarcionTerminada = true;
   // repetirContrasenia = "";
 
-  cim = 
-   { investmentDate: ''}
+  cim = { investmentDate: '' };
   
 
-  toggleLoadingLargeGroupAnimation() {
+  toggleLoadingLargeGroupAnimation( ) {
     this.loadingLargeGroup = true;
     this.btnGuardar = true;
-    setTimeout(() =>{
-      this.confirmarcionTerminada = false
-      this.loadingLargeGroup = false
-      this.btnGuardar = false
-      }, 3000);
+    setTimeout( () => {
+      this.confirmarcionTerminada = false;
+      this.loadingLargeGroup = false;
+      this.btnGuardar = false;
+      }, 3000 );
   }
 
-  constructor(private fb: FormBuilder) {}
+  constructor() {}
 
   ngOnInit(): void {
  

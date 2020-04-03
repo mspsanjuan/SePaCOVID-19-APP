@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'ngx-listar-pacientes',
   templateUrl: './listar-pacientes.component.html',
-  styleUrls: ['./listar-pacientes.component.scss']
+  styleUrls: ['./listar-pacientes.component.scss'],
 })
 export class ListarPacientesComponent implements OnInit {
 
@@ -15,7 +15,7 @@ export class ListarPacientesComponent implements OnInit {
     { name: 'Ben Sullivan', title: 'Carpenter and photographer' }];
 
 
-  usuarioSelect(nombre: any){
+  usuarioSelect( nombre: any ){
     // alert(nombre);
   }
 

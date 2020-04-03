@@ -28,7 +28,7 @@ const routes: Routes = [{
       path: 'primera-carga-datos',
       loadChildren: () => import('./pacientes/pacientes.module')
         .then(m => m.PacientesModule),
-    },    
+    },
     {
       path: '',
       redirectTo: 'iot-dashboard',

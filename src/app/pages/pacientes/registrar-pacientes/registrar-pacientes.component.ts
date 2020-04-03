@@ -6,7 +6,7 @@ import {Location} from '@angular/common';
 @Component({
   selector: 'ngx-registrar-pacientes',
   templateUrl: './registrar-pacientes.component.html',
-  styleUrls: ['./registrar-pacientes.component.scss']
+  styleUrls: ['./registrar-pacientes.component.scss'],
 })
 export class RegistrarPacientesComponent implements OnInit {
 
@@ -21,14 +21,12 @@ export class RegistrarPacientesComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private _location: Location
-  ){}
+    private _location: Location,
+  ) {}
 
-  ngOnInit(){
-    this.route.params.subscribe( params => {
-     
-      // console.log(Object.keys(params['id'].length > 0));
-      if(typeof params['id'] !== 'undefined'){
+  ngOnInit() {
+    this.route.params.subscribe( params => { 
+      if( typeof params['id'] !== 'undefined' ){
         this.paciente.nombre = params['id'].split(' ')[0];
         this.paciente.apellido = params['id'].split(' ')[1];
       }

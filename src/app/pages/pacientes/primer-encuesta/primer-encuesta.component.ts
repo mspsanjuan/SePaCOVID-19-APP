@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {  NbComponentStatus,
-  NbGlobalLogicalPosition,
   NbGlobalPhysicalPosition,
   NbGlobalPosition,
   NbToastrService,
@@ -11,11 +10,11 @@ import {  NbComponentStatus,
 @Component({
   selector: 'ngx-primer-encuesta',
   templateUrl: './primer-encuesta.component.html',
-  styleUrls: ['./primer-encuesta.component.scss']
+  styleUrls: ['./primer-encuesta.component.scss'],
 })
 export class PrimerEncuestaComponent implements OnInit {
   // 
-  constructor(private toastrService: NbToastrService) { }
+  constructor( private toastrService: NbToastrService ) { }
 
   // checked = false;
 
@@ -33,10 +32,10 @@ export class PrimerEncuestaComponent implements OnInit {
   toggleLoadingLargeGroupAnimation() {
     this.loadingLargeGroup = false;
     this.btnGuardar = true;
-    this.showToast('top-right');
-    setTimeout(() =>{     
-      this.btnGuardar = false
-      }, 3000);
+    this.showToast( 'top-right' );
+    setTimeout( () =>{     
+      this.btnGuardar = false;
+      }, 3000 );
   }
 
   showToast(position) {
