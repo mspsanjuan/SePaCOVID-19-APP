@@ -43,7 +43,7 @@ export class PrimerEncuestaComponent implements OnInit {
       hasIcon: this.hasIcon,
       position: this.position,
       icon: 'checkmark-circle-2-outline',
-      pack: 'eva'
+      pack: 'eva',
     };
     this.toastrService.show(
       '',

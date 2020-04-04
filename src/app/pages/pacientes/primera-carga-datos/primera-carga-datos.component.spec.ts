@@ -8,7 +8,7 @@ describe('PrimeraCargaDatosComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PrimeraCargaDatosComponent ]
+      declarations: [ PrimeraCargaDatosComponent ],
     })
     .compileComponents();
   }));

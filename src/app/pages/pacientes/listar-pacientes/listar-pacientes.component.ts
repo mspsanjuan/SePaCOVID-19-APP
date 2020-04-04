@@ -15,7 +15,7 @@ export class ListarPacientesComponent implements OnInit {
     { name: 'Ben Sullivan', title: 'Carpenter and photographer' }];
 
 
-  usuarioSelect( nombre: any ){ }
+  usuarioSelect( nombre: any ) { }
 
 
   constructor() { }
